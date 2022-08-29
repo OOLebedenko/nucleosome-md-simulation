@@ -1,0 +1,12 @@
+source leaprc.protein.ff14SB
+source leaprc.DNA.bsc1
+source leaprc.water.tip4pd
+mol = loadPDB 0_prepare/wt_equlibrated_tails.pdb
+setBox mol vdw
+set mol box {196.45 241.12 137.80}
+solvatebox mol TIP4PDBOX 0
+addions mol Na+ 0
+addions mol Cl- 0
+saveamberparm mol 1_build/draft_box.prmtop 1_build/draft_box.inpcrd
+savepdb mol 1_build/draft_box.pdb
+quit
