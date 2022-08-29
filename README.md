@@ -19,7 +19,7 @@ Key packages and programs:
 ### Run MD simulation
 
 The prepared initial structure of the NCP with full-length histone tails
-is [wt.pdb](md_setup/intial_structure/data/outputs/05_removed_clashes/wt.pdb). The corresponding details on construction
+is [wt.pdb](md_setup/intial_structure/wt.pdb). The corresponding details on construction
 of MD model and MD parameters are placed into [README_MD_SETUP.md](md_setup/README_MD_SETUP.md).`
 
 The business logic of the MD protocol:
@@ -29,9 +29,9 @@ The business logic of the MD protocol:
 2) Resolvation of nucleosome structure with collapsed tails
 3) Run of the production trajectory in smaller box
 
-The current version of protocol supports MD simulation in two water model [TIP4P-D](md_setup/md_protocol/TIP4P-D) or [OPC](md_setup/md_protocol/OPC) equipped with the Bussi
-thermostat. The next example of running is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is
-for [OPC](md_setup/md_protocol/OPC))
+The current version of protocol supports MD simulation using two water model [TIP4P-D](md_setup/md_protocol/TIP4P-D)
+or [OPC](md_setup/md_protocol/OPC) in the NPT ensemble equipped with the Bussi thermostat. The next example of running
+is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is for [OPC](md_setup/md_protocol/OPC))
 
 ```code-block:: bash
 
