@@ -33,7 +33,7 @@ ions have been added to neutralize the system and to match 100 mM NaCl. The syst
 minimal separation between the NCP atoms and the boundary of rectangular box). After 100-ns initial run, all tails
 adopted more compact conformations; at this point, the simulation was stopped and the system was resolvated (rectangular
 box with dimensions 197 Å, 241 Å and 138 Å). These box dimensions were estimated from the previously recorded MD
-trajectories of the NCP. For this purpose, the MD trajectories were scanned for the most extended configurations in the
+trajectories of the NCP totalling 41 μs length (Peng J, et al. (2021)). For this purpose, the MD trajectories were scanned for the most extended configurations in the
 three dimensions. The found values of dimension were used to construct simulation box and solvate system with closeness
 0 (see Fig. 2). The resolvated configuration was used to start the production run. During the simulations, the equations
 of motion were integrated using the leapfrog algorithm with a time step of 2 fs. Bonds involving hydrogen atoms were
