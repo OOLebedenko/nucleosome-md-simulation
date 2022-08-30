@@ -1,7 +1,8 @@
+<div align="justify">
+
 ## MD setup:
 
 ### 1. Construction of nucleosome model
-
 <span style="color:blue">*Note! The preparation of initial structure has been finished yet*</span>
 
 The initial NCP coordinates were constructed based on the crystallographic structure PDB:3LZ0. This template of NCP does
@@ -27,7 +28,6 @@ missing residues (see Fig. 1) :
 </p>
 
 ### 2. MD simulation
-
 The NCP structure with linearly extended histone tails was protonated to match the experimental ph 7. The Na+ and Cl-
 ions have been added to neutralize the system and to match 100 mM NaCl. The system was solvated with TIP4P-D water (12 Å
 minimal separation between the NCP atoms and the boundary of rectangular box). After 100-ns initial run, all tails
@@ -45,7 +45,6 @@ ff14SB / OPC) simulation, including the size of the simulation cell that was ide
 trajectory.
 
 
-
 <p align="center">
   <img src="figures/resolvated_box.png">
   <figcaption> Figure 2. The dimensions of simulation box before and after equilibration of histone tails. 
@@ -55,3 +54,4 @@ trajectory.
                          with collapsed histone tails after equilibration run over 100 ns. The dimensions of the smaller box 
                          were estimated from the previously published long MD trajectories of the nucleosome. 
 </p>
+</div>

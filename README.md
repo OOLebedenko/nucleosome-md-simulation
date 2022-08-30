@@ -1,3 +1,5 @@
+<div align="justify">
+
 # MD simulation of nucleosome core particle (NCP)
 
 This repository contains the scripts and data for setup and running MD simulation of nucleosome with full-length histone
@@ -17,7 +19,6 @@ Key packages and programs:
 ```
 
 ### Run MD simulation
-
 The prepared initial structure of the NCP with full-length histone tails
 is [wt.pdb](md_setup/intial_structure/wt.pdb). The corresponding details on construction
 of MD model and MD parameters are placed into [md_setup/README.md](md_setup/README.md)
@@ -44,5 +45,6 @@ is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is for [OPC](md_setup/
     bash build.sh
     bash run_job.sh
 ```
+</div>
 
 
