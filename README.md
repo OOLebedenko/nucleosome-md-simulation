@@ -20,7 +20,7 @@ Key packages and programs:
 
 The prepared initial structure of the NCP with full-length histone tails
 is [wt.pdb](md_setup/intial_structure/wt.pdb). The corresponding details on construction
-of MD model and MD parameters are placed into [README_MD_SETUP.md](md_setup/README_MD_SETUP.md).`
+of MD model and MD parameters are placed into [md_setup/README.md](md_setup/README.md)
 
 The business logic of the MD protocol:
 
