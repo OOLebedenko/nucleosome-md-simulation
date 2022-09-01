@@ -37,11 +37,11 @@ is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is for [OPC](md_setup/
 ```code-block:: bash
 
     ## 1. tails equlibration step (100 ns)
-    cd md_setup/md_protocol/TIP4P-D/01_equil_histone_tails
+    cd md_setup/md_protocol/TIP4P-D/wt/01_equil_histone_tails
     bash run_job.sh
     
     ## 2. run production trajectory
-    cd md_setup/md_protocol/TIP4P-D/02_production   
+    cd md_setup/md_protocol/TIP4P-D/wt/02_production   
     bash build.sh
     bash run_job.sh
 ```
