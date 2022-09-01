@@ -10,12 +10,13 @@ tails
 Key packages and programs:
 
 - [Amber Molecular Dynamics Package](https://ambermd.org/) (>=20)
+- [git-lfs](https://git-lfs.github.com/)
 
-### Installation
+### Installationавав
 
 ```code-block:: bash
     # clone repo
-    git clone git@github.com:OOLebedenko/nucleosome_project.git
+    git lfs clone git@github.com:OOLebedenko/nucleosome_project.git
 ```
 
 ### Run MD simulation
