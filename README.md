@@ -12,7 +12,7 @@ Key packages and programs:
 - [Amber Molecular Dynamics Package](https://ambermd.org/) (>=20)
 - [git-lfs](https://git-lfs.github.com/)
 
-### Installationавав
+### Installation
 
 ```code-block:: bash
     # clone repo
@@ -20,20 +20,18 @@ Key packages and programs:
 ```
 
 ### Run MD simulation
-The prepared initial structure of the NCP with full-length histone tails
-is [wt.pdb](md_setup/intial_structure/wt.pdb). The corresponding details on construction
-of MD model and MD parameters are placed into [md_setup/README.md](md_setup/README.md)
+The initial model of NCP with full-length histone tails solvated with different water types: [box.pdb (TIP4P-D water)](md_setup/md_protocol/TIP4P-D/wt/01_equil_histone_tails/1_build) and [box.pdb (OPC water)](md_setup/md_protocol/OPC/wt/01_equil_histone_tails/1_build). The details on construction of the MD models and description of the MD simulation parameters can be found in [md_setup/README.md](md_setup/README.md). Please, use these models to start all of your trajectories.
 
 The business logic of the MD protocol:
 
 1) Initial equilibration of the histone tails in the bigger simulation box. After 100-ns initial run, all tails adopted
    more compact conformations. At this point, the simulation is stopped
 2) Resolvation of nucleosome structure with collapsed tails
-3) Run of the production trajectory in smaller box
+3) Running the production trajectory in smaller box
 
 The current version of protocol supports MD simulation using two water model [TIP4P-D](md_setup/md_protocol/TIP4P-D)
-or [OPC](md_setup/md_protocol/OPC) in the NPT ensemble equipped with the Bussi thermostat. The next example of running
-is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is for [OPC](md_setup/md_protocol/OPC))
+or [OPC](md_setup/md_protocol/OPC) in the NPT ensemble equipped with the Bussi thermostat. The following example of starting this protocol
+is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is for [OPC](md_setup/md_protocol/OPC)). The scripts are for a local GPU machine; it is straightforward to adapt them for remote cluster (either GPU or CPU).
 
 ```code-block:: bash
 
@@ -47,5 +45,6 @@ is for [TIP4P-D](md_setup/md_protocol/TIP4P-D)  (the same is for [OPC](md_setup/
     bash run_job.sh
 ```
 </div>
+
 
 
