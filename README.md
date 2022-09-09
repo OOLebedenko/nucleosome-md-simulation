@@ -19,6 +19,17 @@ Key packages and programs:
     git lfs clone git@github.com:OOLebedenko/nucleosome_project.git
 ```
 
+The TIP4P-D water is not the standard choice for MD simulations within the program Amber.
+We provide the required frcmod and lib files for [TIP4P-D(leap parms)](md_setup/amber_parms/TIP4P-D/). 
+You should copy these files into the standard Amber directories.
+
+```code-block:: bash
+
+    cp md_setup/amber_parms/TIP4P-D/leaprc.water.tip4pd $AMBERHOME/dat/leap/cmd/.
+    cp md_setup/amber_parms/TIP4P-D/tip4pdbox.off $AMBERHOME/dat/leap/lib/.
+    
+```
+
 ### Run MD simulation
 The initial model of NCP with full-length histone tails solvated with different water types: [box.pdb (TIP4P-D water)](md_setup/md_protocol/TIP4P-D/wt/01_equil_histone_tails/1_build) and [box.pdb (OPC water)](md_setup/md_protocol/OPC/wt/01_equil_histone_tails/1_build). The details on construction of the MD models and description of the MD simulation parameters can be found in [md_setup/README.md](md_setup/README.md). Please, use these models to start all of your trajectories.
 
