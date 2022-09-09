@@ -4,7 +4,7 @@
 #                                                   1. extract last frame from trajectory of tails equilibration  
 ######################################################################################################################################################################################
 
-$AMBERHOME/bin/ambpdb -p ../../01_equil_histone_tails/wt/1_build/protein.prmtop -c ../../01_equil_histone_tails/wt/6_run/run00100.nc > 0_prepare/wt_equlibrated_tails.pdb
+$AMBERHOME/bin/ambpdb -p ../../01_equil_histone_tails/wt/1_build/nucleosome.prmtop -c ../../01_equil_histone_tails/wt/6_run/run00100.nc > 0_prepare/wt_equlibrated_tails.pdb
 
 ######################################################################################################################################################################################
 #                                                   2. solvate system
