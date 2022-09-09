@@ -61,3 +61,9 @@ sed -i "s/addions mol Na+ 0/addions mol Na+ ${n_na}/g" 1_build/tleap_box.rc
 sed -i "s/addions mol Cl- 0/addions mol Cl- ${n_cl}/g" 1_build/tleap_box.rc
 
 $AMBERHOME/bin/tleap -s -f 1_build/tleap_box.rc
+
+######################################################################################################################################################################################
+#                                                       4. strip solvent from box.prmtop --> nucleosome.prmtop
+######################################################################################################################################################################################
+
+$AMBERHOME/bin/cpptraj -i 1_build/cpptraj_strip_solvent.in
