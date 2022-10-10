@@ -16,7 +16,7 @@ Key packages and programs:
 
 ```code-block:: bash
     # clone repo
-    git lfs clone git@github.com:OOLebedenko/nucleosome_project.git
+    git lfs clone git@github.com:OOLebedenko/nucleosome-md-simulation.git
 ```
 
 The TIP4P-D water is not the standard choice for MD simulations within the program Amber.
