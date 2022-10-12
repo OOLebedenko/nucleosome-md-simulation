@@ -28,16 +28,19 @@ missing residues (see Fig. 1) :
 
 ### 2. MD simulation
 The NCP structure with linearly extended histone tails was protonated to match the experimental ph 7. The Na+ and Cl-
-ions have been added to neutralize the system and to match 100 mM NaCl. The system was solvated with TIP4P-D water (12 Å
-minimal separation between the NCP atoms and the boundary of the rectangular box). 
+ions have been added to neutralize the system and to match 100 mM NaCl. The system was solvated with TIP4P-D water using solvateOct command in tleap 
+(box size is the diameter d =  243 Å of sphere inscribed into the truncated octahedron).
 
 <span style="color:blue">*Note! This solvated system has already been prepared: [box.pdb (TIP4P-D water)](md_protocol/TIP4P-D/wt/01_equil_histone_tails/1_build) or [box.pdb (OPC water)](md_protocol/OPC/wt/01_equil_histone_tails/1_build).*</span>
 We suggest that everyone uses these models as a starting point for their simulations (tails equilibration => re-solvation => production run)
 
 After 100-ns initial run, all tails
-adopted more compact conformations; at this point, the simulation was stopped and the system was re-solvated (rectangular
-box with dimensions 197 Å, 241 Å and 138 Å). These box dimensions were estimated from the previously recorded MD
-trajectories of the NCP totalling 41 μs ([Peng J, et al. (2021)](https://www.nature.com/articles/s41467-021-25568-6)). For this purpose, the MD trajectories were scanned searching for the most extended tail conformations (in x, y, and z dimensions). The found maximal dimensions were used to construct a new (more compact) simulation box. This box was then solvated (with tleap "closeness" parameter set to zero). This re-solvation algorithm significantly reduces the size of the water box, thus increasing the speed of the simulation. At the same time it virtually guarantees that NCP would not interact with its periodic images during the subsequent production run. The initial large box and the final reduced-size box are shown in Fig. 2.
+adopted more compact conformations; at this point, the simulation was stopped and the system was re-solvated using truncated octahedron box reduced by 15% (d=206 Å). 
+The margin of safety in this choice was estimated from the previously recorded MD trajectories of the NCP totalling 41 μs ([Peng J, et al. (2021)](https://www.nature.com/articles/s41467-021-25568-6)). 
+Using the reduced-sized box, the minimal distances between periodic images does not exceed 12 Å in all trajectories.
+This re-solvation algorithm significantly reduces the size of the water box, thus increasing the speed of the simulation. 
+At the same time it virtually guarantees that NCP would not interact with its periodic images during the subsequent production run. 
+The initial large box and the final reduced-size box are shown in Fig. 2.
    
 The re-solvated configuration was used to start the production run. During the simulations, the equations
 of motion were integrated using the leapfrog algorithm with a time step of 2 fs. Bonds involving hydrogen atoms were
