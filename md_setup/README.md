@@ -27,17 +27,16 @@ missing residues (see Fig. 1) :
 </p>
 
 ### 2. MD simulation
-The NCP structure with linearly extended histone tails was protonated to match the experimental ph 7. The Na+ and Cl-
+The NCP structure with linearly extended histone tails was protonated to match the experimental pH 7. The Na+ and Cl-
 ions have been added to neutralize the system and to match 100 mM NaCl. The system was solvated with TIP4P-D water using solvateOct command in tleap 
-(box size is the diameter d =  243 Å of sphere inscribed into the truncated octahedron).
+(truncated octahedron box with the edge length l=119 Å; the diameter of the correspoinding sphere inscribed in the truncated octahedron d=292 Å).
 
 <span style="color:blue">*Note! This solvated system has already been prepared: [box.pdb (TIP4P-D water)](md_protocol/TIP4P-D/wt/01_equil_histone_tails/1_build) or [box.pdb (OPC water)](md_protocol/OPC/wt/01_equil_histone_tails/1_build).*</span>
 We suggest that everyone uses these models as a starting point for their simulations (tails equilibration => re-solvation => production run)
 
 After 100-ns initial run, all tails
-adopted more compact conformations; at this point, the simulation was stopped and the system was re-solvated using truncated octahedron box reduced by 15% (d=206 Å). 
-The margin of safety in this choice was estimated from the previously recorded MD trajectories of the NCP totalling 41 μs ([Peng J, et al. (2021)](https://www.nature.com/articles/s41467-021-25568-6)). 
-Using the reduced-sized box, the minimal distances between periodic images does not exceed 12 Å in all trajectories.
+adopted more compact conformations; at this point, the simulation was stopped and the system was re-solvated using truncated octahedron box reduced by ca. 40% volume-wise (l=84 Å, d=206 Å). 
+This choice is motivated by the previously recorded MD trajectories of the NCP totalling 41 μs ([Peng J, et al. (2021)](https://www.nature.com/articles/s41467-021-25568-6)). Using the reduced-sized box, the minimal distance between NCP and its periodic images does not exceed 12 Å in all of these previously reported trajectories.
 This re-solvation algorithm significantly reduces the size of the water box, thus increasing the speed of the simulation. 
 At the same time it virtually guarantees that NCP would not interact with its periodic images during the subsequent production run. 
 The initial large box and the final reduced-size box are shown in Fig. 2.
@@ -59,7 +58,6 @@ trajectory.
                          extended histone tails (structure <a href="md_protocol/TIP4P-D/wt/01_equil_histone_tails/1_build">box.pdb (TIP4P-D water)</a>). 
                          The bigger box was constructed with the minimal separation of 12 Å between the NCP atoms 
                          and the boundary. The panel B illustrates the smaller box which is used for simulation of the nucleosome 
-                         with collapsed histone tails after finishing the equilibration run (initial 100 ns). The dimensions of the smaller box 
-                         were obtained from the previously published long MD trajectories of the nucleosome. 
+                         with collapsed histone tails after finishing the equilibration run (initial 100 ns). The dimensions of the smaller box are fixed                         (l=..., d = 206 Å) and do not depend on the NCP coordinates following the equilibration run, see above for details. 
 </p>
 </div>
