@@ -58,6 +58,8 @@ trajectory.
                          extended histone tails (structure <a href="md_protocol/TIP4P-D/wt/01_equil_histone_tails/1_build">box.pdb (TIP4P-D water)</a>). 
                          The bigger box was constructed with the minimal separation of 12 Å between the NCP atoms 
                          and the boundary. The panel B illustrates the smaller box which is used for simulation of the nucleosome 
-                         with collapsed histone tails after finishing the equilibration run (initial 100 ns). The dimensions of the smaller box are fixed                         (l=..., d = 206 Å) and do not depend on the NCP coordinates following the equilibration run, see above for details. 
+                         with collapsed histone tails after finishing the equilibration run (initial 100 ns). 
+                         The dimensions of the smaller box are fixed (l=84 Å, d=206 Å) and do not depend on 
+                         the NCP coordinates following the equilibration run, see above for details. 
 </p>
 </div>
