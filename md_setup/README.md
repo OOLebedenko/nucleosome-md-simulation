@@ -35,7 +35,7 @@ ions have been added to neutralize the system and to match 100 mM NaCl. The syst
 We suggest that everyone uses these models as a starting point for their simulations (tails equilibration => re-solvation => production run)
 
 After 100-ns initial run, all tails
-adopted more compact conformations; at this point, the simulation was stopped and the system was re-solvated using truncated octahedron box reduced by ca. 40% volume-wise (l=84 Å, d=206 Å). 
+adopted more compact conformations; at this point, the simulation was stopped and the system was re-solvated using truncated octahedron box reduced by ca. 60% volume-wise (l=84 Å, d=206 Å). 
 This choice is motivated by the previously recorded MD trajectories of the NCP totalling 41 μs ([Peng J, et al. (2021)](https://www.nature.com/articles/s41467-021-25568-6)). Using the reduced-sized box, the minimal distance between NCP and its periodic images does not exceed 12 Å in all of these previously reported trajectories.
 This re-solvation algorithm significantly reduces the size of the water box, thus increasing the speed of the simulation. 
 At the same time it virtually guarantees that NCP would not interact with its periodic images during the subsequent production run. 
