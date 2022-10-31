@@ -1,4 +1,0 @@
-parm 1_build/box.prmtop
-trajin 1_build/box.inpcrd
-strip :WAT,Na+,Cl- parmout 1_build/nucleosome.prmtop
-run
