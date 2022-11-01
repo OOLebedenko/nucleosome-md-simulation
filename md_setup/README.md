@@ -4,11 +4,11 @@
 
 To record a large collection of “state-of-the-art” nucleosome trajectories:
 
-1) Support experimental study by Chris Jaroniec on 15N relaxation in H4 histone tail (wild-type sequence vs. R3A mutant)
+1) Support experimental study by Chris Jaroniec on  <sup>15</sup>N relaxation in H4 histone tail (wild-type sequence vs. R3A mutant)
    . Aiming at JACS or similar.
 2) Possibly write a methodological paper on “best practices” to simulate a nucleosome (idea by Alexei O.)
-3) Open-ended. We can use these trajectories for whatever purposes. 4)If successful, in future we may decide to
-   collectively record more NCP trajectories to address new problems.
+3) Open-ended. We can use these trajectories for whatever purposes. 
+4) If successful, in future we may decide to collectively record more NCP trajectories to address new problems.
 
 ### 1. Construction of nucleosome model
 
@@ -30,13 +30,13 @@ see Fig. 1):
    certain selected Φ and Ψ angles in rebuilt tails were set as in crystallographic structure with partial histone tail
    coordinates (PDB:1AOI). Those residues with adjusted Φ and Ψ are highlighted magenta in the plot below.
 
-<p align="center">
+<figure>
   <img src="figures/md_model.png">
-  <figcaption> Figure 1. The protocol for preparing the initial coordinates of the NCP with full-length histone tails.
-                         The histone core residues taken from the original structure 3LZ0 are colored green. 
-                         The rebuilt histone tail residues are colored yellow. 
-                         The Φ,Ψ-adjusted residues are colored magenta
-</p>
+</figure>
+Figure 1. The protocol for preparing the initial coordinates of the NCP with full-length histone tails.
+The histone core residues taken from the original structure 3LZ0 are colored green. 
+The rebuilt histone tail residues are colored yellow. 
+The Φ,Ψ-adjusted residues are colored magenta
 
 ### 2. MD setup
 
@@ -52,7 +52,7 @@ method [(Schmit J. D., et al. (2018))](https://pubs.acs.org/doi/10.1021/acs.jctc
   <img src="figures/eq_sltcap.png">
 </p>
 
-In our case, the simulation box is large, N0 ≫Q, so that Eq. 1 leads to essentially the same results as (highly
+In our case, the simulation box is large, N<sub>0</sub> ≫Q, so that Eq. 1 leads to essentially the same results as (highly
 intuitive) Eq. 2:
 
 <p align="center">
@@ -63,7 +63,7 @@ Nevertheless, we recommend using more rigorous Eq. 1 (to establish good practice
 
 ### 3. Force field / water model
 
-| <div style="width:100px"> **Force field** </div>| <div style="width:100px"> **Water model** </div> |                                                                                                                                                            **Comments**                                                                                                                                                             |
+| <div style="width:100px"> **Force field** </div>| <div style="width:100px"> **Water model** </div> |                                                                                                                                            <div style="width:300px"> **Comments** </div>                                                                                                                                            |
 |:-----------------------------------------:|:------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |               Amber ff99SB                |                       OPC                        |                                                                                        Developer’s choice using OPC to model both ordered and disordered systems [(Shabane P. S., et al. (2019))](https://pubmed.ncbi.nlm.nih.gov/30865832/)                                                                                        || Content Cell    | Content Cell    | Second Header |
 |               Amber ff19SB                |                       OPC                        | Flagship combination recommended in Amber 22 manual to simulate folded proteins. Tests on unfolded proteins [(Abriata L. A., et al. (2021))](https://www.sciencedirect.com/science/article/pii/S2001037021001628), [(Pedersen K. B., et al. (2022))](https://onlinelibrary.wiley.com/doi/10.1002/prot.26409?af=R) have been limited |
@@ -83,20 +83,19 @@ run).*</p><p>*The shell scripts to execute these steps, together with a separate
 github page:
 https://github.com/OOLebedenko/nucleosome-md-simulation
 
-<p align="center">
-  <img src="figures/resolvated_box.png">
-  <figcaption> Figure 2. The dimensions of simulation box before and after the equilibration of histone tails. 
-                         The panel A illustrates the bigger initial box for initial simulation of the nucleosome with the 
-                         fully extended histone tails (constructed via SolvateOct using the minimal separation of 12 Å 
-                         between the NCP atoms and the boundary; structure box.pdb (TIP4P-D water)). The panel B 
-                         illustrates the smaller box which is used for simulation of the nucleosome with collapsed 
-                         histone tails after finishing the equilibration run (initial 100 ns). The dimensions of the
-                         smaller box are fixed (L=84 Å, d=206 Å) and do not depend on the NCP coordinates following the 
-                         equilibration run, see text for details; these dimensions are also identical for the OPC and 
-                         TIP4P-D water models 
-</p>
-</div>
+<figure>
+   <img src="figures/resolvated_box.png">
+</figure>
 
+Figure 2. The dimensions of simulation box before and after the equilibration of histone tails. 
+The panel A illustrates the bigger initial box for initial simulation of the nucleosome with the 
+fully extended histone tails (constructed via SolvateOct using the minimal separation of 12 Å 
+between the NCP atoms and the boundary; structure box.pdb (TIP4P-D water)).[^3] The panel B 
+illustrates the smaller box which is used for simulation of the nucleosome with collapsed 
+histone tails after finishing the equilibration run (initial 100 ns). The dimensions of the
+smaller box are fixed (L=84 Å, d=206 Å) and do not depend on the NCP coordinates following the 
+equilibration run, see text for details; these dimensions are also identical for the OPC and 
+TIP4P-D water models.
 
 
 After 100-ns initial run, all tails adopted more compact conformations; at this point, the simulation is stopped and the
@@ -116,7 +115,7 @@ production run.
 The re-solvated configuration is used to start the production run. During the simulations, the equations of motion are
 integrated using the leapfrog algorithm with a time step of 2 fs.[^6] Bonds involving hydrogen atoms are constrained
 using SHAKE algorithm. The non-bonded interactions are calculated with cutoff of 10.5 Å, as recommended for disordered
-proteins (Piana, S. K. et al. PLoS One 7:e39918 (2012)). Long-range interactions are treated using a particle-mesh Ewald
+proteins ([Piana, S. K. et al. (2012)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039918)). Long-range interactions are treated using a particle-mesh Ewald
 summation scheme with default parameters for grid spacing and spline interpolation. Constant pressure is maintained
 using Berendsen barostat with relaxation time 2 ps. Bussi thermostat (also known as v-rescale thermostat) is used to
 stabilize temperature at 25°C. The commonly used Langevin thermostat is not recommended for studying dynamics properties
@@ -139,3 +138,5 @@ using HMR / 4 fs setup and let you know about the results.
 relaxation rates that are virtually identical to the NVE-ensemble trajectories. In contrast, NPT-ensemble trajectories
 using Langevin thermostat produce spin relaxation rates that deviate strongly from the NVE results (e.g. by a factor of
 2).
+
+</div>
