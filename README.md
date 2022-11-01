@@ -13,8 +13,8 @@ Key packages and programs:
 
 ### Installation
 
-The topology files needed for MD simulation are too large for a distribution on github. We archived the full MD
-protocol on Zenodo at: https://zenodo.org/record/7270388#.Y2Dy93tByUk
+The topology files needed for MD simulation are too large for a distribution on github. We archived the full MD protocol
+on Zenodo at: https://zenodo.org/record/7270388#.Y2Dy93tByUk
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7270388.svg)](https://doi.org/10.5281/zenodo.7270388)
 
@@ -64,6 +64,10 @@ machine; it is straightforward to adapt them for a remote cluster (either GPU or
     bash build_box_prod.sh
     bash run_job_prod.sh
 ```
+
+### Link to the Gitter chat
+
+[![Gitter](https://img.shields.io/gitter/room/DAVFoundation/DAV-Contributors.svg?style=flat-square)](https://gitter.im/nucleosome-md-simulation/community)
 
 </div>
 
