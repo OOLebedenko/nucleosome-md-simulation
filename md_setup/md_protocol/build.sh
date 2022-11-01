@@ -1,21 +1,14 @@
 #! /bin/bash -f
 
 ######################################################################################################################################################################################
-#                                                   1. extract last frame from trajectory of tails equilibration  
-######################################################################################################################################################################################
-
- mkdir -p 0_prepare
- $AMBERHOME/bin/ambpdb -p ../01_equil_histone_tails/1_build/nucleosome.prmtop -c ../01_equil_histone_tails/6_run/run00100.nc > 0_prepare/wt_equlibrated_tails.pdb
-
-######################################################################################################################################################################################
-#                                                   2. solvate system
+#                                                   1. solvate system
 ######################################################################################################################################################################################
 
 $AMBERHOME/bin/tleap -s -f 1_build/tleap_draft_box.rc
 
 
 ######################################################################################################################################################################################
-#                                                   3. calculate number of Na+ and Cl- ions needed to neutralize system and to match the target salt concentration 
+#                                                   2. calculate number of Na+ and Cl- ions needed to neutralize system and to match the target salt concentration 
 ######################################################################################################################################################################################
 
 # target NaCl concentration
@@ -50,10 +43,10 @@ n_na=$(printf %1.0f $n_na)
 n_cl=$(printf %1.0f $n_cl)
 
 ######################################################################################################################################################################################
-#                                                       4. resolvate system to match experimental NaCl concentration
+#                                                       3. resolvate system to match experimental NaCl concentration
 ######################################################################################################################################################################################
 
-# save input file for tleap
+# # save input file for tleap
 cp 1_build/tleap_draft_box.rc 1_build/tleap_box.rc
 sed -i s/draft_//g 1_build/tleap_box.rc
 sed -i "s/addions mol Na+ 0/addions mol Na+ ${n_na}/g" 1_build/tleap_box.rc
@@ -62,7 +55,7 @@ sed -i "s/addions mol Cl- 0/addions mol Cl- ${n_cl}/g" 1_build/tleap_box.rc
 $AMBERHOME/bin/tleap -s -f 1_build/tleap_box.rc
 
 #####################################################################################################################################################################################
-#                                                      5. strip solvent from box.prmtop --> nucleosome.prmtop
+#                                                      4. strip solvent from box.prmtop --> nucleosome.prmtop
 #####################################################################################################################################################################################
 
 $AMBERHOME/bin/cpptraj -i 1_build/cpptraj_strip_solvent.in

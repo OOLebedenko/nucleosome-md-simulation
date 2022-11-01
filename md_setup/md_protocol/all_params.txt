@@ -1,0 +1,152 @@
+--------------------------------------------------------------------------------
+      CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+default_name                                                                    
+
+General flags:
+     imin    =       0, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       5, irest   =       1, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       2, ntpr    =    5000, ntrx    =       1, ntwr    =  500000
+     iwrap   =       1, ntwx    =    5000, ntwv    =       0, ntwe    =       0
+     ioutfm  =       1, ntwprt  =   24942, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       2, ntb     =       2, igb     =       0, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =  10.50000, intdiel =   1.00000
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Molecular dynamics:
+     nstlim  =    500000, nscm    =      1000, nrespa  =         1
+     t       =   0.00000, dt      =   0.00200, vlimit  =  -1.00000
+
+Bussi temperature regulation:
+     temp0   = 298.00000, tempi   = 298.00000, tautp   =   1.00000
+
+Pressure regulation:
+     ntp     =       1
+     pres0   =   1.00000, comp    =  44.60000, taup    =   2.00000
+
+SHAKE:
+     ntc     =       2, jfastw  =       0
+     tol     =   0.00001
+
+| Intermolecular bonds treatment:
+|     no_intermolecular_bonds =       1
+
+| Energy averages sample interval:
+|     ene_avg_sampling =    5000
+
+Extra-points options:
+     frameon =       1, chngmask=       1
+
+Ewald parameters:
+     verbose =       0, ew_type =       0, nbflag  =       1, use_pme =       1
+     vdwmeth =       1, eedmeth =       1, netfrc  =       1
+     NFFT1 =  256       NFFT2 =  256       NFFT3 =  160
+     Cutoff=   10.500   Tol   =0.100E-04
+     Ewald Coefficient =  0.26121
+     Interpolation order =    4
+|      EXTRA_PTS, trim_bonds: num bonds BEFORE trim =950597     0
+|      EXTRA_PTS, trim_bonds: num bonds AFTER  trim =950597     0
+|      EXTRA_PTS, trim_bonds: num bonds BEFORE trim =327398     0
+|      EXTRA_PTS, trim_bonds: num bonds AFTER  trim = 14338     0
+|      EXTRA_PTS, trim_theta: num angle BEFORE trim = 26225     0
+|      EXTRA_PTS, trim_theta: num angle AFTER  trim = 26225     0
+|      EXTRA_PTS, trim_theta: num angle BEFORE trim = 20539     0
+|      EXTRA_PTS, trim_theta: num angle AFTER  trim = 20539     0
+|      EXTRA_PTS, trim_phi:  num diheds BEFORE trim = 52337     0
+|      EXTRA_PTS, trim_phi:  num diheds AFTER  trim = 52337     0
+|      EXTRA_PTS, trim_phi:  num diheds BEFORE trim = 51444     0
+|      EXTRA_PTS, trim_phi:  num diheds AFTER  trim = 51444     0
+
+
+--------------------------------------------------------------------------------
+      PARAMETERS DEFINITION
+--------------------------------------------------------------------------------
+#### General flags
+#imin=0, # run molecular dynamics without any minimization
+#nmropt=0 # 0 (default) No nmr-type analysis will be done.
+
+#### Nature and format of input
+#ntx=5, # read coordinates and velocities from restart file
+#irest=1, # reading coordinates and velocities from a previously saved restart file
+#ntrx=1, # Format of the Cartesian coordinates for restraint from the refc file. Formatted (ASCII). Default
+
+#### Nature and format of output
+#ntxo # Format of the final coordinates, velocities, and box size. Formatted (ASCII). Default
+#iwrap=1, # wrap periodic images into unit box 
+#ioutfm=1 # binary format of coordinate and velocity trajectory files (mdcrd, mdvel and inptraj)
+#ntpr=500, # md out print frequency 
+#ntwx=500, # md crd output frequency 
+#ntwprt=24942, # the number of atoms to include in trajectory files (without water and ions)
+idecomp=0 # (default) Do not decompose energies.
+#ntwr=500000, # md restart frequency
+#mdwe=0 # Every ntwe steps, the energies and temperatures will be written to mdout file
+#rbornstat=0 # don't report on Born radii in mdout file
+
+#### Potential function
+#ntf=2, # bond force is shake
+#ipol=0 # non polarizble force field.
+#dielc=1 # Dielectric constant for electrostatic interactions
+#ntb=2, # constant pressure
+#cut=10.5, # non-bond cutoff radius
+#intdiel=1 Sets the interior dielectric constant of the molecule of interest. Default is 1.0.
+#nsnb=25 Determines the frequency of nonbonded list updates. Default is 25.
+
+#### Molecular dynamics
+#nstlim=500000, # number of md steps 
+
+#### Bussi temperature regulation
+#tempi=298.0, # initial temperature
+#temp0=298.0, # target temperature
+tautp=1 # Time constant, in ps, for heat bath coupling for the system. Default is 1.0
+
+#### Pressure regulation
+#ntp=1
+#pres0=1.00000, # Reference pressure. Default 1.
+#comp=44.60000, # compressibility of the system when NTP > 0. Default 44.6
+#taup=2.00000 #Pressure relaxation time (in ps), when NTP > 0. 
+
+#### SHAKE
+#ntc=2, # shake only for hydrogens
+#jfastw=0 # 
+#tol=0.00001 # Relative geometrical tolerance for coordinate resetting in shake. Default 0.00001
+#jfastw=0 # Fast water definition flag. Default 0. 
+
+
+### Ewald parameters
+#verbose=0, #Standard use is to have VERBOSE = 0.
+#ew_type=0, #EW_TYPE = 0 which turns on the particle mesh ewald (PME) method
+#nbflag=1, # nbflag = 1 (the default when imin = 0 or ntb > 0)
+#use_pme=1 # PME on GPU
+#vdwmeth=1, #Determines the method used for van der Waals interactions beyond those included in the direct sum. Default value of 1 uses a continuum model correction for energy and pressure.
+#eedmeth=1, #Determines how the switch function for the direct sum Coulomb interaction is evaluated. The default value of 1 uses a cubic spline
+#netfrc=1 #The basic "smooth" PME implementation used here does not necessarily conserve momentum. If netfrc = 1, (the default) the total force on the system is artificially removed at every step
+#Cutoff=10.500   
+#Tol=0.100E-04 #This relates to the width of the direct sum part of the Ewald sum, requiring that the value of the direct sum at the Lennard-Jones cutoff value (specified in CUT as during standard dynamics).
+#Ewald Coefficient=0.26121 # Default is determined by dsum_tol and cutoff
+#Interpolation order=4 # An order of 4 (the default) implies a cubic spline approximation which is a good standard value.
+
+#NFFT1=256   NFFT2=256   NFFT3=160
+These give the size of the charge grid (upon which the reciprocal sums are interpolated) in
+each dimension. Higher values lead to higher accuracy (when the DSUM_TOL is also lowered) but
+considerably slow the calculation. Generally it has been found that reasonable results are obtained
+when NFFT1, NFFT2 and NFFT3 are approximately equal to A, B and C, respectively, leading to
+a grid spacing (A/NFFT1, etc.) of 1.0 Å. Significant performance enhancement in the calculation
+of the fast Fourier transform is obtained by having each of the integer NFFT1, NFFT2 and NFFT3
+values be a product of powers of 2, 3, and/or 5. If the values are not given, the program will chose
+values to meet these criteria
+
+
+
+
+
+
