@@ -84,8 +84,8 @@ Ewald parameters:
 #ntxo # Format of the final coordinates, velocities, and box size. Formatted (ASCII). Default
 #iwrap=1, # wrap periodic images into unit box 
 #ioutfm=1 # binary format of coordinate and velocity trajectory files (mdcrd, mdvel and inptraj)
-#ntpr=500, # md out print frequency 
-#ntwx=500, # md crd output frequency 
+#ntpr=5000, # md out print frequency
+#ntwx=5000, # md crd output frequency
 #ntwprt=24942, # the number of atoms to include in trajectory files (without water and ions)
 idecomp=0 # (default) Do not decompose energies.
 #ntwr=500000, # md restart frequency
