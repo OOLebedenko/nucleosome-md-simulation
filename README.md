@@ -31,6 +31,7 @@ Amber directories.
 
     cp md_setup/amber_parms/TIP4P-D/leaprc.water.tip4pd $AMBERHOME/dat/leap/cmd/.
     cp md_setup/amber_parms/TIP4P-D/tip4pdbox.off $AMBERHOME/dat/leap/lib/.
+    cp md_setup/amber_parms/TIP4P-D/frcmod.tip4pd $AMBERHOME/dat/leap/parm/.
     
 ```
 
