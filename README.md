@@ -23,15 +23,34 @@ on Zenodo at: https://zenodo.org/record/7270388#.Y2Dy93tByUk
     wget https://zenodo.org/record/7270388/files/ncp_md_simulation_protocol.zip
 ```
 
-The TIP4P-D water is not a standard choice for MD simulations within the program Amber. We provide the required frcmod
-and lib files for [TIP4P-D(leap parms)](md_setup/amber_parms/TIP4P-D/). You should copy these files into the standard
-Amber directories.
+The ff99SB_disp force field, TIP4P-D and TIP4P-D_disp water is not a standard choice for MD simulations within the program Amber. 
+In addition, the current organization of $AMBERHOME/dat/leap/ files doesn't allow loading both ff99SB protein force field
+and bsc1 nucleic force field, because of using the different common set of parameters parm99 (for ff99SB) and parm10 (for bsc1).
+We provide the required cmd, frcmod and lib files for [ff99SB_disp](md_setup/amber_parms/ff99SB_disp/), [TIP4PD](md_setup/amber_parms/TIP4PD/),
+[TIP4PD_disp](md_setup/amber_parms/TIP4PD_disp/) and [bsc1_parm99](md_setup/amber_parms/bsc1_parm99/).
+You should copy these files into the standard Amber directories.
 
 ```code-block:: bash
-
-    cp md_setup/amber_parms/TIP4P-D/leaprc.water.tip4pd $AMBERHOME/dat/leap/cmd/.
-    cp md_setup/amber_parms/TIP4P-D/tip4pdbox.off $AMBERHOME/dat/leap/lib/.
-    cp md_setup/amber_parms/TIP4P-D/frcmod.tip4pd $AMBERHOME/dat/leap/parm/.
+    
+    ## copy cmd files
+    cp md_setup/amber_parms/ff99SB_disp/cmd/leaprc.protein.ff99SBdisp $AMBERHOME/dat/leap/cmd/.
+    cp md_setup/amber_parms/TIP4PD_disp/cmd/leaprc.water.tip4pd_disp $AMBERHOME/dat/leap/cmd/.
+    cp md_setup/amber_parms/TIP4PD/cmd/leaprc.water.tip4pd $AMBERHOME/dat/leap/cmd/.
+    cp md_setup/amber_parms/bsc1_parm99/cmd/leaprc.ff99SB.bsc1 $AMBERHOME/dat/leap/cmd/.
+    cp md_setup/amber_parms/bsc1_parm99/cmd/leaprc.ff99SB_disp.bsc1 $AMBERHOME/dat/leap/cmd/.
+  
+    # copy parm files 
+    cp md_setup/amber_parms/ff99SB_disp/parm/frcmod.ff99SBdisp $AMBERHOME/dat/leap/parm/.
+    cp md_setup/amber_parms/TIP4PD_disp/parm/frcmod.tip4pd_disp $AMBERHOME/dat/leap/parm/.
+    cp md_setup/amber_parms/TIP4PD/parm/frcmod.tip4pd $AMBERHOME/dat/leap/parm/.
+    cp md_setup/amber_parms/bsc1_parm99/parm/frcmod.parmbsc1.oldff $AMBERHOME/dat/leap/parm/.
+     
+    # copy lib files  
+    cp md_setup/amber_parms/ff99SB_disp/lib/all_amino94disp.lib $AMBERHOME/dat/leap/lib/.
+    cp md_setup/amber_parms/ff99SB_disp/lib/all_aminoct94disp.lib $AMBERHOME/dat/leap/lib/.
+    cp md_setup/amber_parms/ff99SB_disp/lib/all_aminont94disp.lib $AMBERHOME/dat/leap/lib/.
+    cp md_setup/amber_parms/TIP4PD_disp/lib/tip4pdbox_disp.off $AMBERHOME/dat/leap/lib/.
+    cp md_setup/amber_parms/TIP4PD/lib/tip4pdbox.off $AMBERHOME/dat/leap/lib/.
     
 ```
 
