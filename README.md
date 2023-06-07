@@ -51,6 +51,7 @@ You should copy these files into the standard Amber directories.
     cp md_setup/amber_parms/ff99SB_disp/lib/all_aminont94disp.lib $AMBERHOME/dat/leap/lib/.
     cp md_setup/amber_parms/TIP4PD_disp/lib/tip4pdbox_disp.off $AMBERHOME/dat/leap/lib/.
     cp md_setup/amber_parms/TIP4PD/lib/tip4pdbox.off $AMBERHOME/dat/leap/lib/.
+    cp md_setup/amber_parms/bsc1_parm99/lib/parmBSC1.lib.oldff $AMBERHOME/dat/leap/lib/.
     
 ```
 
