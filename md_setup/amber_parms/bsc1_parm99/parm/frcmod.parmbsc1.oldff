@@ -1,7 +1,7 @@
 Parmbsc1 force-field for DNA
 MASS
 CE  12.01
-C1  12.01         0.360               sp2 C purines in pos. 8 Ade (CK)
+C0  12.01         0.360               sp2 C purines in pos. 8 Ade (CK)
 C2  12.01         0.360               sp2 C pyrimidines in pos. 5 & 6 Thy Ura (CM)
 CI  12.01
 
@@ -10,9 +10,9 @@ CE-H1  340.0    1.090
 CE-CT  310.0    1.526
 OS-CE  320.0    1.410
 CE-OH  320.0    1.410  
-C1-H5  367.0    1.080       changed from 340. bsd on C6H6 nmodes; ADE 
-C1-N*  440.0    1.371       JCC,7,(1986),230; ADE 
-C1-NB  529.0    1.304       JCC,7,(1986),230; ADE 
+C0-H5  367.0    1.080       changed from 340. bsd on C6H6 nmodes; ADE 
+C0-N*  440.0    1.371       JCC,7,(1986),230; ADE 
+C0-NB  529.0    1.304       JCC,7,(1986),230; ADE 
 C-C2   410.0    1.444       JCC,7,(1986),230; THY,URA 
 C2-C2  549.0    1.350       JCC,7,(1986),230; THY,URA 
 C2-CT  317.0    1.510       JCC,7,(1986),230; THY 
@@ -40,12 +40,12 @@ P-OS-CE     100.0     120.50
 H1-CE-OH    50.0      109.50
 CE-OH-HO    55.0      108.50
 CT-CE-OH    50.0      109.50
-H5-C1-N*    50.0      123.05 
-H5-C1-NB    50.0      123.05 
-N*-C1-NB    70.0      113.90 
-CB-N*-C1    70.0      105.40 
-C1-N*-CT    70.0      128.80 
-CB-NB-C1    70.0      103.80 
+H5-C0-N*    50.0      123.05 
+H5-C0-NB    50.0      123.05 
+N*-C0-NB    70.0      113.90 
+CB-N*-C0    70.0      105.40 
+C0-N*-CT    70.0      128.80 
+CB-NB-C0    70.0      103.80 
 C2-C-NA     70.0      114.10 
 C2-C-O      80.0      125.30 
 HC-CT-C2    50.0      109.50    changed based on NMA nmodes
@@ -75,8 +75,8 @@ DIHEDRAL
 X-CE-OS-X      3       1.150       0.0           3.
 X-CE-OH-X      3       0.500       0.0           3.
 X-CE-CT-X      9       1.400       0.0           3.
-X-C1-N*-X      4       6.80        180.0         2.         JCC,7,(1986),230 
-X-C1-NB-X      2       20.00       180.0         2.         JCC,7,(1986),230 
+X-C0-N*-X      4       6.80        180.0         2.         JCC,7,(1986),230 
+X-C0-NB-X      2       20.00       180.0         2.         JCC,7,(1986),230 
 X-C-C2-X       4       8.70        180.0         2.         intrpol.bsd.on C6H6 
 X-C2-C2-X      4       26.60       180.0         2.         intrpol.bsd.on C6H6 
 X-C2-CT-X      6       0.00        0.0           3.         JCC,7,(1986),230 
@@ -110,9 +110,9 @@ OS-P-OS-CE     1       0.797144    295.45281     3.         zeta
 CT-CT-CE-CT    1       1.2         38.45        -1.         puckering 
 CT-CT-CE-CT    1       0.9        -2.23          3.         puckering
 CT-CE-CT-OS    1       1.2         322.41        1.         puckering
-OS-CT-N*-C1    1       0.41        225.4        -3.         bsc1,ade
-OS-CT-N*-C1    1       1.91        0.7          -2.         bsc1,ade
-OS-CT-N*-C1    1       0.91        120.1         1.         bsc1,ade
+OS-CT-N*-C0    1       0.41        225.4        -3.         bsc1,ade
+OS-CT-N*-C0    1       1.91        0.7          -2.         bsc1,ade
+OS-CT-N*-C0    1       0.91        120.1         1.         bsc1,ade
 OS-CT-N*-CK    1       0.44        219.8        -3.         bsc1,gua
 OS-CT-N*-CK    1       1.73        4.0          -2.         bsc1,gua
 OS-CT-N*-CK    1       0.81        87.5          1.         bsc1,gua
@@ -148,8 +148,8 @@ CT-CT-CI-OH    1       0.092102    295.63279    -2.         bsc0,gamma
 CT-CT-CI-OH    1       0.962830    348.09535     3.         bsc0,gamma
 
 IMPROPER 
-X-X-C1-H5           1.1          180.          2. 
-CB-C1-N*-CT         1.0          180.          2. 
+X-X-C0-H5           1.1          180.          2. 
+CB-C0-N*-CT         1.0          180.          2. 
 X-X-C2-H4           1.1          180.          2. 
 X-X-C2-HA           1.1          180.          2. 
 C-C2-N*-CT          1.0          180.          2.           dac guess, 9/94 
@@ -166,6 +166,6 @@ NB-CA-CB-CB         0.0          180.          2.
 
 NONBONDED
 CE          1.9080  0.1094
-C1          1.9080  0.0860             Spellmeyer 
+C0          1.9080  0.0860             Spellmeyer 
 C2          1.9080  0.0860             Spellmeyer 
 CI          1.9080  0.1094             bsc0
