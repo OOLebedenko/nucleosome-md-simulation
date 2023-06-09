@@ -37,7 +37,7 @@ You should copy these files into the standard Amber directories.
     cp md_setup/amber_parms/TIP4PD_disp/cmd/leaprc.water.tip4pd_disp $AMBERHOME/dat/leap/cmd/.
     cp md_setup/amber_parms/TIP4PD/cmd/leaprc.water.tip4pd $AMBERHOME/dat/leap/cmd/.
     cp md_setup/amber_parms/bsc1_parm99/cmd/leaprc.ff99SB.bsc1 $AMBERHOME/dat/leap/cmd/.
-    cp md_setup/amber_parms/bsc1_parm99/cmd/leaprc.ff99SB_disp.bsc1 $AMBERHOME/dat/leap/cmd/.
+    cp md_setup/amber_parms/bsc1_parm99/cmd/leaprc.ff99SBdisp.bsc1 $AMBERHOME/dat/leap/cmd/.
   
     # copy parm files 
     cp md_setup/amber_parms/ff99SB_disp/parm/frcmod.ff99SBdisp $AMBERHOME/dat/leap/parm/.
