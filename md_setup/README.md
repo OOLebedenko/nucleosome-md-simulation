@@ -40,9 +40,9 @@ The Φ,Ψ-adjusted residues are colored magenta
 
 ### 2. MD setup
 
-The NCP structure with linearly extended histone tails was protonated to match the experimental pH 7 using program
-PDB2PQR [(Dolinsky T. J., et al. (2007))](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1933214/). The Na+ and Cl- ions
-have been added to neutralize the system and to reproduce 100 mM NaCl.[^1] For Na+ and Cl- we used the default
+The NCP structure with linearly extended histone tails was protonated to match the experimental pH 7.2 using program
+PDB2PQR [(Dolinsky T. J., et al. (2007))](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1933214/). The K+ and Cl- ions
+have been added to neutralize the system and to reproduce 150 mM KCl.[^1] For K+ and Cl- we used the default
 Joung/Cheatham monovalent ion parameters
 following [(Kolesnikov E.S., et al., (2021))](https://pubs.acs.org/doi/10.1021/acs.jctc.1c00332).[^2] To calculate the
 number of ions to be added, we used the SLTCAP
@@ -123,7 +123,7 @@ of system. The reason is that the Langevin thermostat applies the random force t
 actual motional modes (cf. this [Amber forum thread](http://archive.ambermd.org/201512/0039.html)
 , [(Dunweg B., (1993))](https://aip.scitation.org/doi/10.1063/1.465444)). [^7]
 
-[^1]: We used Na+ in accordance with the experimental practice (instead of the physiologically relevant K+)
+[^1]: We used physiologically relevant K+ (instead of Na+ used in experimental practice)
 [^2]: We choose not to use CUFIX since it has been parameterized with TIP3P water (advice by Alexey O.)
 [^3]: Apparently, *SolvateOct* contains a bug – portions of the NCP are “sticking out” of the truncated octahedral box.
 We are currently discussing this issue with David Case and have developed an alternative algorithm to resolve this
