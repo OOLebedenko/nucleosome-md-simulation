@@ -195,13 +195,6 @@ loadOff all_amino94.lib
 loadOff all_aminoct94.lib
 loadOff all_aminont94.lib
 
-#
-#       Load water and ions
-# 
-loadOff ions94.lib
-loadOff solvents.lib
-HOH = TP3
-WAT = TP3
 
 #
 # Define the PDB name map for the amino acids and DNA.
