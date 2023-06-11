@@ -2,7 +2,7 @@
 
 ### The objectives
 
-To record a large collection of “state-of-the-art” nucleosome trajectories:
+To record a large collection of “state-of-the-art” nucleosome trajectori
 
 1) Support experimental study by Chris Jaroniec on  <sup>15</sup>N relaxation in H4 histone tail (wild-type sequence vs. R3A mutant)
    . Aiming at JACS or similar.
@@ -89,8 +89,8 @@ https://github.com/OOLebedenko/nucleosome-md-simulation
 
 Figure 2. The dimensions of simulation box before and after the equilibration of histone tails. 
 The panel A illustrates the bigger initial box for initial simulation of the nucleosome with the 
-fully extended histone tails (constructed via SolvateOct using the minimal separation of 12 Å 
-between the NCP atoms and the boundary; structure box.pdb (TIP4P-D water)).[^3] The panel B 
+fully extended histone tails (constructed via SolvateOct using the minimal separation of 12 Å[^3] 
+between the NCP atoms and the boundary; structure box.pdb (TIP4P-D water)).[^4] The panel B 
 illustrates the smaller box which is used for simulation of the nucleosome with collapsed 
 histone tails after finishing the equilibration run (initial 100 ns). The dimensions of the
 smaller box are fixed (L=84 Å, d=206 Å) and do not depend on the NCP coordinates following the 
@@ -105,7 +105,7 @@ box is shown in Fig. 2B.
 This choice of box size is motivated by the previously recorded MD trajectories of the NCP totaling 41
 μs ([Peng J., et al. (2021)](https://www.nature.com/articles/s41467-021-25568-6)). Specifically, we have re-analyzed the
 trajectories by Peng et al. assuming different box sizes. We have found that the box size (L=84 Å, d=206 Å) ensures a
-healthy separation between the master-copy NCP and its periodic images (no less than 12.9 Å).[^4],[^5] The re-solvation
+healthy separation between the master-copy NCP and its periodic images (no less than 12.9 Å).[^5],[^6] The re-solvation
 procedure significantly reduces the size of the water box, thus increasing the speed of the simulation. At the same
 time, it offers a good degree of confidence that NCP would not interact with its periodic images during the subsequent
 production run.
@@ -113,7 +113,7 @@ production run.
 ### Simulation parameters
 
 The re-solvated configuration is used to start the production run. During the simulations, the equations of motion are
-integrated using the leapfrog algorithm with a time step of 2 fs.[^6] Bonds involving hydrogen atoms are constrained
+integrated using the leapfrog algorithm with a time step of 2 fs.[^7] Bonds involving hydrogen atoms are constrained
 using SHAKE algorithm. The non-bonded interactions are calculated with cutoff of 10.5 Å, as recommended for disordered
 proteins ([Piana, S. K. et al. (2012)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0039918)). Long-range interactions are treated using a particle-mesh Ewald
 summation scheme with default parameters for grid spacing and spline interpolation. Constant pressure is maintained
@@ -121,20 +121,22 @@ using Berendsen barostat with relaxation time 2 ps. Bussi thermostat (also known
 stabilize temperature at 25°C. The commonly used Langevin thermostat is not recommended for studying dynamics properties
 of system. The reason is that the Langevin thermostat applies the random force to the system and interferes with the
 actual motional modes (cf. this [Amber forum thread](http://archive.ambermd.org/201512/0039.html)
-, [(Dunweg B., (1993))](https://aip.scitation.org/doi/10.1063/1.465444)). [^7]
+, [(Dunweg B., (1993))](https://aip.scitation.org/doi/10.1063/1.465444)). [^8]
 
-[^1]: We used physiologically relevant K+ (instead of Na+ used in experimental practice)
+[^1]: We used physiologically relevant K+ ions (instead of Na+ ions previously used in the NMR expirements)
 [^2]: We choose not to use CUFIX since it has been parameterized with TIP3P water (advice by Alexey O.)
-[^3]: Apparently, *SolvateOct* contains a bug – portions of the NCP are “sticking out” of the truncated octahedral box.
+[^3]: Sometimes the simulation would not start for no apperent reason. We found that this problem can be solved by changing the 
+   thickness of the water shell (e.g. from 12 Å to 12.05 Å)
+[^4]: Apparently, *SolvateOct* contains a bug – portions of the NCP are “sticking out” of the truncated octahedral box.
 We are currently discussing this issue with David Case and have developed an alternative algorithm to resolve this
 problem. However, in the context of this NCP simulation this does not matter whatsoever.
-[^4]: The analysis has been performed with the stride of 10 ns.
-[^5]: A similar analysis has also been performed for our own 2-μs trajectory of NCP in TIP4P-D water, showing even
+[^5]: The analysis has been performed with the stride of 10 ns.
+[^6]: A similar analysis has also been performed for our own 2-μs trajectory of NCP in TIP4P-D water, showing even
 greater separation from the periodic images.
-[^6]: We decided not to use the Hydrogen Mass Repartitioning (HMR) algorithm with 4 fs integration step. This is because
+[^7]: We decided not to use the Hydrogen Mass Repartitioning (HMR) algorithm with 4 fs integration step. This is because
 HMR / 4 fs setup has never been tested with regard to spin relaxation calculations. We will run one trial trajectory
 using HMR / 4 fs setup and let you know about the results.
-[^7]: We have an extensive data (unpublished) showing that NPT-ensemble trajectories using Bussi thermostat produce spin
+[^8]: We have an extensive data (unpublished) showing that NPT-ensemble trajectories using Bussi thermostat produce spin
 relaxation rates that are virtually identical to the NVE-ensemble trajectories. In contrast, NPT-ensemble trajectories
 using Langevin thermostat produce spin relaxation rates that deviate strongly from the NVE results (e.g. by a factor of
 2).
