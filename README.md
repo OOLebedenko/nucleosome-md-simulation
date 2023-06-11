@@ -20,7 +20,7 @@ on Zenodo at: https://zenodo.org/record/7270388#.Y2Dy93tByUk
 
 ```code-block:: bash
     # download the archive from Zenodo
-    wget https://zenodo.org/record/7270388/files/ncp_md_simulation_protocol.zip
+    wget https://zenodo.org/record/8031458/files/ncp_md_simulation_protocol.zip
 ```
 
 The ff99SB_disp force field, TIP4P-D and TIP4P-D_disp water are not a part of the standard Amber distribution. 
