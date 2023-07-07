@@ -16,11 +16,11 @@ Key packages and programs:
 The topology files needed for MD simulation are too large for a distribution on github. We archived the full MD protocol
 on Zenodo at: https://zenodo.org/record/7270388#.Y2Dy93tByUk
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7270388.svg)](https://doi.org/10.5281/zenodo.7270388)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8124268.svg)](https://doi.org/10.5281/zenodo.8124268)
 
 ```code-block:: bash
     # download the archive from Zenodo
-    wget https://zenodo.org/record/8031458/files/ncp_md_simulation_protocol.zip
+    wget https://zenodo.org/record/8124268/files/ncp_md_simulation_protocol.zip
 ```
 
 The ff99SB_disp force field, TIP4P-D and TIP4P-D_disp water are not a part of the standard Amber distribution. 
