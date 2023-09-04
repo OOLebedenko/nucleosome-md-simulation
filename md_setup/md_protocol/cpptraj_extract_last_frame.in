@@ -1,0 +1,8 @@
+parm ../01_equil_histone_tails/1_build/nucleosome.prmtop
+reference ../01_equil_histone_tails/0_prepare/*.pqr
+trajin ../01_equil_histone_tails/6_run/run00100.nc 100
+autoimage
+align @P reference
+trajout 0_prepare/equlibrated_tails.pdb
+run
+ 
