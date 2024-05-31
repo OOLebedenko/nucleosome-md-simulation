@@ -4,7 +4,7 @@
 
 To record a large collection of “state-of-the-art” nucleosome trajectori
 
-1) Support experimental study by Chris Jaroniec on  <sup>15</sup>N relaxation in H4 histone tail (wild-type sequence vs. R3A mutant)
+1) Support experimental study by Chris Jaroniec on  <sup>15</sup>N relaxation in H4 histone tail (wild-type sequence vs. R3m mutant)
    . Aiming at JACS or similar.
 2) Possibly write a methodological paper on “best practices” to simulate a nucleosome (idea by Alexei O.)
 3) Open-ended. We can use these trajectories for whatever purposes. 
